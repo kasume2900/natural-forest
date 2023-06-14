@@ -1,0 +1,127 @@
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+:root {
+  --index : calc(1vw + 1vh);
+  --transition : 1.5s cubic-bezier(.08,.49,.01,1);
+  --logo-size : calc(var(--index)* 7.8)
+}
+
+.logo {
+  background-image: url('../../public/logo.svg');
+  width: var(--logo-size);
+  height:  var(--logo-size);
+  background-repeat: no-repeat;
+  position: absolute;
+  left: calc(50% - calc(var(--logo-size) / 2) );
+  top: calc(var(--index)* 2.8);
+  z-index: 1;
+}
+
+
+
+.layers {
+  perspective: 1000px;
+}
+
+
+.layers__conteiner {
+  height: 100vh;
+  min-height: 500px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform var(--transition);
+}
+
+
+.layers__item {
+  position: absolute;
+  inset: -5vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transform: rotateX(); */
+}
+
+
+
+.hero-content {
+  font-size: calc(var(--index) * 2.9);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: calc(var(--index) * -0.15);
+  line-height: 1.35em;
+  margin-top: calc(var(--index) * 5.5);
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+p {
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: calc(var(--index) * 0.73);
+  line-height: 3;
+}
+
+button {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: calc(var(--index)* 0.71);
+  letter-spacing: -.02vw;
+  padding: calc(var(--index) * .71) calc(var(--index) * 1.25);
+  background-color: transparent;
+  color: #fff;
+  border-radius: 10em;
+  border: rgb(255 255 255 / .4) 3px solid;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.layer1 {
+  background-image: url('../../public/layer-1.jpg');
+  
+  transform: translateZ(-55px) scale(1.06);
+}
+.layer2 {
+  background-image: url('../../public/layer-2.png');
+  transform: translateZ(80px) scale(.88);
+}
+.layer3 { 
+  transform: translateZ(180px) scale(.8);
+}
+.layer4 {
+  transform: translateZ(190px) scale(.9);
+}
+.layer5 {
+  background-image: url('../../public/layer-5.png');
+  transform: translateZ(300px) scale(.9);
+}
+.layer6 {
+  background-image: url('../../public/layer-6.png');
+  transform: translateZ(380px);
+}
+
+.layer4, .layer5, .layer6 {
+  pointer-events: none;
+}
