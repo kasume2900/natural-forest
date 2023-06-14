@@ -25,7 +25,7 @@ export default function Main() {
           <div className="layers__item layer3">
             <div className="hero-content">
               <h1>natural forest</h1>
-              <h2>html/css</h2>
+              <h2>Next.js/css</h2>
               <p>Creating a beautiful 3D website with a 'lens effect'</p>
               <button>Start Learning</button>
             </div>
